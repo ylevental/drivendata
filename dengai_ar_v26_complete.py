@@ -388,14 +388,7 @@ print(f"Final blend: mean={final_blend.mean():.2f}")
 # Create submission
 final_submission = submission.copy()
 final_submission['total_cases'] = final_blend
-final_submission.to_csv('/home/claude/submission_ar_v26_standalone.csv', index=False)
-
-# Also save to outputs
-import os
-import shutil
-os.makedirs('/mnt/user-data/outputs', exist_ok=True)
-shutil.copy('/home/claude/submission_ar_v26_standalone.csv', 
-            '/mnt/user-data/outputs/submission_ar_v26_standalone.csv')
+final_submission.to_csv('submission_ar_v26_standalone.csv', index=False)
 
 print("\n" + "="*60)
 print("DONE!")
